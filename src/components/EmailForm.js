@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 // import { Tab } from '@headlessui/react'
-import { TextField,Box,Button } from '@mui/material'
+import { TextField,Button } from '@mui/material'
+import emailjs from '@emailjs/browser';
 // Local Data
 // import data from "../../data/portfolio.json";
 
@@ -14,117 +15,166 @@ const EmailForm = ({theme}) => {
   // useEffect(() => {
   //   setMounted(true);
   // }, []);
-  const newObj = {
-    name: '',
-    email: '',
-    comment: ''
-    }
-  const [email, setEmail] = useState(newObj)
-  const [nameError, setNameError] = useState(false)
-  const [emailError, setEmailError] = useState(false)
-  const [commentError, setCommentError] = useState(false)
 
-  function handleSubmit(e){
-    e.preventDefault();
+  const form = useRef();
 
-    // setEmail({[e.target.name]:e.target.value})
-    console.log(email)
-    setNameError(false)
-    setEmailError(false)
-    setCommentError(false)
+    const newObj = {
+        name: '',
+        email: '',
+        comment: ''
+    }
+    const [email, setEmail] = useState(newObj)
+    const [nameError, setNameError] = useState(false)
+    const [emailError, setEmailError] = useState(false)
+    const [commentError, setCommentError] = useState(false)
 
-    if (email.name === ''){
-        setNameError(true)
-    }
-    if (email.email === ''){
-        setEmailError(true)
-    }
-    if (email.comment === ''){
-        setCommentError(true)
-    }
-    fetch('http://127.0.0.1:5555/emails',{
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-        body: JSON.stringify(email)
-    })
-    .then(r=>r.json())
-    .then(data=>{
-        setEmail(data)
-    })
-  }
+    // function handleSubmit(e){
+    //     e.preventDefault();
 
-  function handleChange(e){
-    setEmail({...email,[e.target.name]:e.target.value})
-  }
+        // setEmail({[e.target.name]:e.target.value})
+        // console.log(email)
+        // setNameError(false)
+        // setEmailError(false)
+        // setCommentError(false)
+
+        // if (email.name === ''){
+        //     setNameError(true)
+        // }
+        // if (email.email === ''){
+        //     setEmailError(true)
+        // }
+        // if (email.comment === ''){
+        //     setCommentError(true)
+        // }
+        // fetch('http://127.0.0.1:5555/emails',{
+        //     method: "POST",
+        //     headers: {
+        //         'Accept': 'application/json',
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(email)
+        // })
+        // .then(r=>r.json())
+        // .then(data=>{
+        //     setEmail(data)
+        // })
+
+        // emailjs.sendForm(
+        //     process.env.REACT_APP_SERVICE_ID,
+        //     process.env.REACT_APP_TEMPLATE_ID,
+        //     form.current,
+        //     process.env.REACT_APP_PUBLIC_KEY
+        //     )
+        //     .then((result) => {
+        //         alert('message sent successfully...');
+        //         console.log(result.text);
+        //     }, (error) => {
+        //         console.log(error.text);
+        //     });
+//         emailjs.sendForm(
+//             'service_ps2uizo', 'template_spcrl5d', form.current, 'yKjCLak0XHsqrUMWd'
+//             )
+//             .then((result) => {
+//                 console.log(result.text);
+//                 setEmail(newObj)
+//             }, (error) => {
+//                 console.log(error.text);
+//             });
+//   }
+
+    function handleChange(e){
+        setEmail((email)=>(
+            {...email,[e.target.name]:e.target.value
+            }))
+    }
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        console.log(email)
+        setNameError(false)
+        setEmailError(false)
+        setCommentError(false)
+
+        if (email.name === ''){
+            setNameError(true)
+        }
+        if (email.email === ''){
+            setEmailError(true)
+        }
+        if (email.comment === ''){
+            setCommentError(true)
+        }
+        emailjs.sendForm('service_ps2uizo', 'template_spcrl5d', form.current, 'yKjCLak0XHsqrUMWd')
+          .then((result) => {
+              console.log(result.text);
+              setEmail(newObj)
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
   
 
   return (
-    <div>
-        <div className = 'contact-info'>
+    <div className = 'contact-info'>
+        <div>
             <h1>
                 Contact Me
             </h1>
         </div>
-        <h4 className="pre-email-form">
+        <div className="pre-email-form">
             For business inquiries, you can email me, @gelkik@gmail.com, or fill out the form below:
-        </h4>
-        <Box
-            component="form"
-            sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-            >
+        </div>
+                <br />
             <form
                 className = 'email-form'
-                onSubmit={handleSubmit}
-                contentContainerStyle={{flexGrow : 1, justifyContent : 'center'}}
+                ref={form}
+                onSubmit={sendEmail}
+                // style={{input: { color: 'white' } }}
             >
                 <TextField 
-                    InputLabelProps={{ shrink: true }} 
+                    InputLabelProps={{ shrink: true, input: { color: 'white' } }} 
                     margin="dense"
-                    style = {{width: '100%'}}
+                    style = {{width: '90%',input: { color: 'white' }}}
                     id="standard-basic" 
                     label="Name" 
-                    variant="outlined" 
+                    variant="filled" 
                     value ={email.name}
                     name = 'name'
                     onChange={handleChange}
                     error={nameError}
                     helperText={nameError ? "Cannot leave your name blank." : ''}
                 />
+                <br />
                 <TextField 
                     InputLabelProps={{ shrink: true }}
                     margin="dense"
-                    style = {{width: '100%'}}
+                    style = {{width: '90%'}}
                     id="standard-basic" 
                     label="Email" 
-                    variant="outlined" 
+                    variant="filled" 
                     name = 'email'
                     value ={email.email}
                     onChange={handleChange}
                     error={emailError}
                     helperText={emailError ? "I need your email address!" : ''}
                 />
+                <br />
                 <TextField 
                     InputLabelProps={{ shrink: true }} 
                     margin="dense"
-                    style = {{width: '100%'}}
+                    style = {{width: '90%'}}
                     id="standard-basic" 
                     label="Comment" 
                     name = 'comment'
                     multiline
                     rows={7}
-                    variant="outlined" 
+                    variant="filled" 
                     value ={email.comment}
                     onChange={handleChange}
                     error={commentError}
                     helperText={commentError ? "Must leave a comment." : ''}
                 />
+                <br />
                 <Button 
                     type='submit'
                     variant="outlined"
@@ -133,7 +183,7 @@ const EmailForm = ({theme}) => {
                     Send
                 </Button>
             </form>
-        </Box>
+            <br />
     </div>
   )
 

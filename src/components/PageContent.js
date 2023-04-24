@@ -43,10 +43,46 @@ function PageContent({theme}) {
                     </p>
             </div>
                 <Stack className="page-content-buttons" spacing={4} direction="row" sx={{fontSize: 10, justifyContent: 'center'}}>
+                <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                            backgroundColor: 'rgb(225, 234, 238)',
+                            borderRadius: '50%'
+
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
                     <Button variant="text"><SocialIcon url = "https://github.com/gelkik" target="_blank"/></Button>
+                </Box>
+                <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                            backgroundColor: 'rgb(225, 234, 238)',
+                            borderRadius: '50%'
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
                     <Button variant="text"><SocialIcon url = "https://www.linkedin.com/in/george-elkik/"target="_blank"/></Button>
+                </Box>
+                <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                            backgroundColor: 'rgb(225, 234, 238)',
+                            borderRadius: '50%'
+
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
                     <Button variant="text"><SocialIcon url = "https://medium.com/@gelkik"target="_blank"/></Button>
+                </Box>
                 </Stack>
+            
         </div>
 
     )

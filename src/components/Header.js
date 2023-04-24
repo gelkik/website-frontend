@@ -4,6 +4,7 @@ import EmailForm from './EmailForm'
 import AboutMe from './AboutMe'
 import Projects from './Projects';
 import PageContent from "./PageContent";
+import { BsMoonFill,BsSunFill } from 'react-icons/bs';
 
 
 const Header = () => {
@@ -53,7 +54,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <button onClick={toggleTheme}>{theme === 'light' ? <span>&#9789;</span> : <span>&#9788;</span>}</button>
+        <div style={{marginRight:'4vw'}}className = 'header-theme' onClick={toggleTheme}>{theme === 'light' ? <BsMoonFill />:<BsSunFill />}</div>
       </header>
       <section id="page-content">
         <PageContent 

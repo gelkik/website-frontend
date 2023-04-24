@@ -301,18 +301,30 @@ animation-fill-mode: forwards; */
 
 .pre-email-form{
   text-align: center;
-  padding-left:2vw;
-  padding-right:2vw;
-}
-.email-form{
-  text-align: center;
-  padding-left:20vw;
-  padding-right:20vw;
 }
 
+.email-form{
+  text-align: center;
+  /* padding-left:20vw;
+  padding-right:30vw; */
+}
+
+.MuiInputBase-input  {
+  background: rgb(225, 234, 238);
+}
+
+.MuiTextField-root {
+  background: rgb(225, 234, 238);
+}
 @media (max-width:600px){
+  .header-nav ul {
+    list-style:none;
+    margin-left: -7vw;
+    font-size: 3vw;
+  }
+
   .about-me-text{
-    text-align: left;
+    text-align: center;
     font-family: monospace;
     flex-wrap: wrap;
     padding-left:2vw;
@@ -335,18 +347,17 @@ animation-fill-mode: forwards; */
     max-height: '100%';
     font-family: monospace;
   }
-  #contact{
+  .contact-info{
     text-align: center;
     height: 30em;
     max-height: '100%';
-    margin-top: 45vh;
     font-family: monospace;
+    margin-right: 1%;
+    /* padding-right: 10%; */
   }
-  .email-form{
-    padding-left:5vw;
-    padding-right:5vw;
+  .pre-email-form{
+    font-size: 90%;
   }
 }
-
 
 

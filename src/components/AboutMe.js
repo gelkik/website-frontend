@@ -1,5 +1,7 @@
 import React from "react";
-import DevIcon,{iconList} from "devicon-react-svg";
+import DevIcon from "devicon-react-svg";
+// import { Box } from '@mui/material'
+// import * as icon from 'devicon/icons'
 
 // Local Data
 // import data from "../../data/portfolio.json";
@@ -19,7 +21,7 @@ const AboutMe = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       width: "150px",
   };
 
-  console.log(iconList)
+  // console.log(iconList)
   return (
     // <Tab.Group manual>
     //   <Tab.List defaultIndex={0}>
