@@ -298,6 +298,10 @@ animation-fill-mode: forwards; */
   padding-top:100px;
   font-size: '10%';
 }
+.about-me-row3{
+  filter: contrast(50%);
+
+}
 
 .pre-email-form{
   text-align: center;
