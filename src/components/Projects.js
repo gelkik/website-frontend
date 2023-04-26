@@ -89,7 +89,7 @@ function Projects() {
                 }
                 <br />
             <div className ='projects-2'>
-                <a style={{color: 'red',textDecoration:'none'}}href="https://github.com/gelkik/Dog-Shelter-Web">Roger's Dog Rescue</a>
+                <a style={{color: 'purple',textDecoration:'none'}}href="https://github.com/gelkik/Dog-Shelter-Web">Roger's Dog Rescue</a>
             </div>
         </div>
     )

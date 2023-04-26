@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { SocialIcon } from 'react-social-icons';
 import Me from '../data/Me.JPEG'
+import Me2 from '../data/IMG_5930.jpg'
 import Box from '@mui/material/Box';
 
 
@@ -25,7 +26,7 @@ function PageContent({theme}) {
                         borderRadius: '50%'
                     }}
                     alt="Picture of Me!"
-                    src={Me}
+                    src={Me2}
                 />
             </Box>
             <div className={`page-content-text-${theme}`}>

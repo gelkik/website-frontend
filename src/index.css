@@ -160,7 +160,7 @@ li:hover {
 }
 #about{
   height: 40em;
-  margin-top: 20vh;
+  margin-top: 20vw;
   max-height: '100%';
   margin-bottom: 10vh;
   /* font-size: 2vw; */
@@ -361,13 +361,14 @@ animation-fill-mode: forwards; */
     margin-top: 20vh;
     max-height: '100%';
     font-size: 4vw;
+    padding-top: 20vw;
   }
   #about > div > div.about-me-skills > div > img{
     width: 10px;
   }
   #projects{
-    height: 30em;
-    margin-top: 10em;
+    /* height: 30em; */
+    margin-top: 20em;
     font-family: monospace;
     
   }
@@ -383,12 +384,16 @@ animation-fill-mode: forwards; */
   .projects-1{
     font-size: 5vw;
   }
+  .projects-2{
+    font-size: 5vw;
+  }
   .contact-info{
     text-align: center;
     height: 30em;
     max-height: '100%';
     font-family: monospace;
     margin-right: 1%;
+    
     /* padding-right: 10%; */
   }
   .pre-email-form{
