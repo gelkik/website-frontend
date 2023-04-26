@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/website-frontend/static/css/main.96eb98c9.css",
-    "main.js": "/website-frontend/static/js/main.9be442af.js",
+    "main.css": "/website-frontend/static/css/main.409ef1f1.css",
+    "main.js": "/website-frontend/static/js/main.6e95614b.js",
     "static/js/787.c4e7f8f9.chunk.js": "/website-frontend/static/js/787.c4e7f8f9.chunk.js",
     "static/media/DataDunk Demo.mp4": "/website-frontend/static/media/DataDunk Demo.fcef7a7aa0edd58c2e0d.mp4",
     "static/media/Me.JPEG": "/website-frontend/static/media/Me.805a2185799596005cc0.JPEG",
+    "static/media/IMG_5930.jpg": "/website-frontend/static/media/IMG_5930.bb79f99632b904402466.jpg",
     "index.html": "/website-frontend/index.html",
-    "main.96eb98c9.css.map": "/website-frontend/static/css/main.96eb98c9.css.map",
-    "main.9be442af.js.map": "/website-frontend/static/js/main.9be442af.js.map",
+    "main.409ef1f1.css.map": "/website-frontend/static/css/main.409ef1f1.css.map",
+    "main.6e95614b.js.map": "/website-frontend/static/js/main.6e95614b.js.map",
     "787.c4e7f8f9.chunk.js.map": "/website-frontend/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.96eb98c9.css",
-    "static/js/main.9be442af.js"
+    "static/css/main.409ef1f1.css",
+    "static/js/main.6e95614b.js"
   ]
 }
