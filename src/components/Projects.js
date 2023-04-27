@@ -48,7 +48,7 @@ function Projects() {
                 >
                 <Fade in={showVid}>
                     <Box sx={style}> 
-                    <h2 style={{color:'white',textAlign:'right'}}onClick={handleClose}>X</h2>
+                    <h2 style={{color:'white',textAlign:'right', cursor:'pointer'}}onClick={handleClose}>X</h2>
                     <Typography id="transition-modal-title" variant="h4" component="h2" style={{color: 'orange',fontFamily:'monospace'}}>
                         DataDunk
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{color: 'white',fontFamily:'monospace'}}>

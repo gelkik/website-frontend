@@ -122,7 +122,7 @@ const EmailForm = ({theme}) => {
             </h1>
         </div>
         <div className="pre-email-form">
-            For business inquiries, you can email me, @gelkik@gmail.com, or fill out the form below:
+            For business inquiries, you can email me, gelkik@gmail.com, or fill out the form below:
         </div>
                 <br />
             <form
